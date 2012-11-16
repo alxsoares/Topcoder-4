@@ -1,0 +1,55 @@
+"a"
+"b"
+{100,2,3}
+205
+Returns: 2
+
+
+"abcba"
+"abcba"
+{67,23,43}
+0
+Returns: 1
+
+"cccccccc"
+"aaaaaaaa"
+{10000000,1,1}
+100
+Returns: 40320
+
+
+"aa"
+"cc"
+{1,10,100}
+1787
+Returns: 123611681
+
+
+Algorithm:
+
+Cuento los parciales:
+
+costo = 100
+movimientos = 1
+costo restante = 105
+
+Totales:
+
+vueltas = 1
+caminos = 2
+-----------------------
+
+Cuento los parciales:
+
+costo = 0
+movimientos = 0
+costo restante = 0
+
+Totales:
+
+vueltas = 0
+caminos = 1
+
+-----------------------
+
+Cuento los parciales:

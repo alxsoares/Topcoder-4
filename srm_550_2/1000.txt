@@ -1,0 +1,120 @@
+
+{
+"..AA..",
+".CAAC.",
+".CAAC.",
+}
+
+- Encuentro A.
+- A esta arriba, lo guardo.
+- Encuentro C.
+- guardo C.
+- reverse.
+- "CA"
+
+
+{
+"..47..",
+"..74.."
+}
+
+- Cuento: 2.
+- Calculo cuadrado de 4.
+- Voy con 4: falla.
+- Voy con 7: falla.
+- Devuelvo "ERROR!". # la iteracion sobre las letras no agrega nada, y no es el final.
+
+{"bbb666",
+ ".655X5",
+ "a65AA5",
+ "a65AA5",
+ "a65555"}
+
+- Primera iteracion:
+- Cuento: b65XaA, 6
+- Calculo b.
+- Busco b, agrego b "b"
+- Calculo 6: falla.
+- Calculo 5.
+- Busco 5: falla.
+- Calculo X.
+- Busco X, Agrego X "bX"
+- Calculo a.
+- Busco a, Agrego a "baX"
+- Calculo A.
+- Busco A, Agrego A "baXA"
+- Segunda iteracion:
+- Busco 6, falla.
+- Busco 5, Agrego 5 "baXA5"
+- Tercera iteracion 
+- Busco 6, Agrego 6 "baXA56"
+- Termino
+- Reverse: "65AXab"
+
+{"aabbaaaaaaaaaaaaaaaaaa",
+ "aabbccccccccccccccaaaa",
+ "aab11111ccccccccccaaaa",
+ "aab12221ccccccccccaaaa",
+ "aab12221ccccccccccaaaa",
+ "aab12221ccccccccccaaaa",
+ "aab12221ccccccccccaaaa",
+ "aab12221ccccccccccaaaa",
+ "aab12221ddddddddddaaaa",
+ "aab13331DDDDDDDDDDaaaa",
+ "aab13331DDDDDDDDDDaaaa",
+ "aa.11111DDDDDDDDDDaaaa",
+ "aaaaaaaaaaaaaaaaaaaaaa"}
+
+
+- Cuento "abc12d3D"
+- Primera iteracion.
+- Calculo todos?
+- Busco a, falla.
+- Busco b, falla.
+- Busco c, falla.
+- Busco 1, falla.
+- Busco 2, agrego "2".
+- Busco d, agrego "d2"
+- Busco 3, agrego "d32"
+- Busco D, agrego "dD32"
+- Segunda iteracion
+- Busco a, falla.
+- Busco b, falla.
+- Busco c, falla.
+- Busco 1, agrego "dD321"
+- Tercera iteracon
+- Busco a, falla.
+- Busco b, agrego "dD321b"
+- Busco c, agrego "dD321bc"
+- Cuarta iteracion
+- Busco a falla por punto.
+- return "ERROR!"
+
+
+
+- Algorithm:
+
+
+- Itero sobre el grid agregando los caracteres y marcando su inicio.
+- Itero en reversa marcando el final.
+vector<char> characters,  o string characters?
+vector<pair<int, int> > inits,
+vector<pair<int, int> > ends.
+
+vector<char> result.
+
+- Mientras el tamaño de result aumente
+ - Itero sobre las letras en characters-result: c
+   r = no_fallo
+   - Itero sobre el grid. i, j
+     if i <= charsx[c].second && i >= charsx[c].first
+     	&& j <= charsy[c].second && j >= charsy[c].first:
+	   if g[i][j] != c:
+	      r = fallo
+   if no_fallo:
+      parcial_result.pb(c)      
+ - ordeno al reves parcial_result.
+ - agrego parcial_result a result.
+- Si result.size == characters.size devuelvo reverse(result)
+- Sino devuelvo "ERROR!"
+
